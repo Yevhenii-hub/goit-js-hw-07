@@ -14,10 +14,18 @@ const categoriesRef = document.querySelector('#categories');
 
 const itemRef = categoriesRef.querySelectorAll('.item');
 
-itemRef.forEach(element => {
-  console.log(`Категория: ${element.firstElementChild.textContent}
-Количество элементов: ${element.lastElementChild.children.length}`);
+itemRef.forEach( elem => {
+  console.log(`Категория: ${elem.firstElementChild.textContent}
+Количество элементов: ${elem.lastElementChild.children.length}`);
 });
 
+////////////////////////////////////////////////////////
+// const numbers = [1, 2, 3];
 
+
+// // Функциональный forEach
+// numbers.forEach(aaa => console.log(aaa));
+
+// // Указываем параметр idx если нужен доступ к счетчику
+// numbers.forEach((aaa, idx) => console.log(`index ${idx}, value ${aaa}`));
 
