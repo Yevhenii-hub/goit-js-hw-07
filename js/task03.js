@@ -7,6 +7,7 @@
 
 // Все элементы галереи должны добавляться в DOM за одну операцию вставки.
 // Добавь минимальное оформление галереи флексбоксами или гридами через css-классы.
+
 const images = [
   {
     url:
@@ -25,47 +26,34 @@ const images = [
   },
 ];
 
+const galleryRef = document.querySelector('#gallery');
+console.log(galleryRef);
 
-const galleryRef = document.querySelector('#gallery')
-console.log(galleryRef)
+const topGallery = img => {
+    const itemRef = document.createElement('li');
+    itemRef.classList.add('item-gallery');
 
-const firstGallery = img => {
-  const itemRef = document.createElement('li')
-  itemRef.classList.add('item-gallery')
+    const imgRef = document.createElement('img');
+    imgRef.src = img.url;
+    imgRef.alt = img.alt;
+    imgRef.classList.add('img-gallery');
 
-
-  const itemRef = document.createElement('img'
-  imgRef.src = img.url;
-  
-  )
-}
-
+  itemRef.append(imgRef);
+    return itemRef; 
+};
 
 
-// const createGallery = img => {
-//     const itemRef = document.createElement('li');
-//     itemRef.classList.add('item-gallery');
+const imageGallery = images.map(img => topGallery(img));
+galleryRef.append(...imageGallery);
 
-//     const imgRef = document.createElement('img');
-//     imgRef.src = img.url;
-//     imgRef.alt = img.alt;
-//     imgRef.classList.add('img-gallery');
 
-//     itemRef.append(imgRef);
-//     return itemRef; 
-// };
+galleryRef.style.display = "flex";
+// galleryRef.style.display.flex = "wrap-wrap";
+galleryRef.style.justifyContent = 'space-between';
 
-// const imageGallery = images.map(img => createGallery(img));
-// galleryRef.append(...imageGallery);
-
-// // add styles
-
-// galleryRef.style.display = "flex";
-// galleryRef.style.justifyContent = 'space-between';
-
-// const imgItems = document.querySelectorAll('.img-gallery');
-// imgItems.forEach((el) => {
-//     el.style.width = '300px';
-//     el.style.height = '200px';
+const imgItems = document.querySelectorAll('.img-gallery');
+imgItems.forEach((el) => {
+    el.style.width = '350px';
+    el.style.height = '200px';
     
-// });
+});
