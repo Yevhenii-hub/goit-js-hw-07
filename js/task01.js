@@ -14,10 +14,14 @@ const categoriesRef = document.querySelector('#categories');
 
 const itemRef = categoriesRef.querySelectorAll('.item');
 
-itemRef.forEach( elem => {
+console.log(`В списке ${itemRef.length} категории`)
+
+itemRef.forEach(elem => {
+  
   console.log(`Категория: ${elem.firstElementChild.textContent}
 Количество элементов: ${elem.lastElementChild.children.length}`);
 });
+
 
 ////////////////////////////////////////////////////////
 // const numbers = [1, 2, 3];
